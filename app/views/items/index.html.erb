@@ -2,6 +2,7 @@
 <table border="1">
   <thead>
     <tr>
+        <td><b>ID</b></td>
         <td><b>Name</b></td>
         <td><b>Price</b></td>
         <td><b>Description</b></td>
@@ -10,10 +11,12 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
+        <td><%= item.id %></td>
         <td><%= item.name %></td>
         <td><%= item.price %></td>
-        <td><%= item.descprion %></td>
+        <td><%= item.description %></td>
         <td><a href="/items/<%=item.id%>/edit">Edit</a></td>
+         </td>
         <td><%= button_to "Delete",item,method: :delete %>
          </td>
         
