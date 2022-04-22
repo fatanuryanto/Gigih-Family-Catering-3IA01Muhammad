@@ -1,2 +1,26 @@
-<h1>Customers#index</h1>
-<p>Find me in app/views/customers/index.html.erb</p>
+<h1> Customer List </h1>
+<table border="1">
+  <thead>
+    <tr>
+        <td><b>ID</b></td>
+        <td><b>Name</b></td>
+        <td><b>Phone</b></td>
+        <td><b>Address</b></td>
+        <td><b>Action</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.id %></td>
+        <td><%= customer.name %></td>
+        <td><%= customer.phone %></td>
+        <td><%= customer.address %></td>
+        <td><a href="/customers/<%=customer.id%>/edit">Edit</a></td>
+        <td><%= button_to "Delete",customer,method: :delete %>
+         </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<a href="/customers/new">New Item</a>

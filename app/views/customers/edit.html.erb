@@ -1,2 +1,7 @@
-<h1>Customers#edit</h1>
-<p>Find me in app/views/customers/edit.html.erb</p>
+<h3>Edit Customer Details</h3>
+<%= form_with model: @customer ,method: :patch do |form| %>
+  <%= form.text_field :name, placeholder: "name" %>
+  <%= form.text_field :phone, placeholder: "phone" %>
+  <%= form.text_field :address, placeholder: "address" %>
+  <%= form.submit %>
+<% end %>
