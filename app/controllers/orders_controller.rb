@@ -6,6 +6,12 @@ class OrdersController < ApplicationController
   def show
     @order=Order.find(params[:id])
   end
+  
+
+  def report
+    today = DateTime.current.to_date
+    @reports = Order.joins(:customer).where("order_date = ?", today)
+  end
 
   def new
     @order=Order.new
@@ -13,16 +19,27 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order = Order.create(params.require(:order).permit(:name,:order_date,:quantity))
-
+    order = Order.create(params.require(:order).permit(:customer_id,:status,:order_date,:total))
     redirect_to orders_path
   end
 
   def edit
+    @customers=Customer.all
+    @order=Order.find(params[:id])
   end
 
-  def report 
-    @reports=Order.all
-    @reports=Order.where('order_date=?',DateTime.Current.to_date)
+  def update
+    order = Order.update(params.require(:order).permit(:customer_id,:status,:order_date,:total))
+    redirect_to orders_path
   end
+
+  def destroy
+    
+    order = Order.find(params[:id])
+    order.destroy
+
+    redirect_to orders_path
+  end
+
+  
 end

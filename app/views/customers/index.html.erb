@@ -19,8 +19,7 @@
         <td><%= customer.phone %></td>
         <td><%= customer.address %></td>
         <td><a href="/customers/<%=customer.id%>/edit">Edit</a></td>
-        <td><%= button_to "Delete",customer,method: :delete %>
-         </td>
+        <td><%= button_to "Delete",customer,method: :delete %></td
       </tr>
     <% end %>
   </tbody>

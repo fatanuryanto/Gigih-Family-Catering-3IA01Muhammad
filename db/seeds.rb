@@ -8,9 +8,9 @@
 Customer.create(name: "Muhammad Fata Nuryanto",email:"fatanuryanto1010@gmail.com",phone: "088223951155",address: "Cileungsi, Kab.Bogor")
 Item.create(name: "Nsai Goreng",price: 12000,description:"Nasi digoreng")
 
-Order.create(customer_id:1,order_date:"2022-04-23 03:00:00",total:12000)
+Order.create(customer_id:1,status:"Paid",order_date:"2022-04-23 03:00:00",total:12000)
 
-Order.create(customer_id:2,order_date:"2022-04-24 03:00:00",total:16000)
+Order.create(customer_id:2,status:"New",order_date:"2022-04-27 03:00:00",total:16000)
 
 OrderDetail.create(order_id:1,item_id:1,quantity:1)
 OrderDetail.create(order_id:2,item_id:2,quantity:2)

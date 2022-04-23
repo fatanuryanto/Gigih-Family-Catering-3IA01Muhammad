@@ -1,8 +1,9 @@
-<h1> Items </h1>
+<h1> Order List </h1>
 <table border="1">
   <thead>
     <tr>
         <td><b>Customer</b></td>
+        <td><b>Status</b></td>
         <td><b>Order Date</b></td>
         <td><b>Total</b></td>
         <td><b>Action</b></td>
@@ -11,10 +12,13 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.customer.name %></td>
+        <td><%= order.customer_id%></td>
+        <td><%= order.status %></td>
         <td><%= order.order_date %></td>
         <td><%= order.total %></td>
-        <td><a href="/orders/<%=order.id%>">Show</a> <a href="/orders/<%=order.id%>/edit">Edit</a> <%= button_to "Delete",order,method: :delete %>
+        <td><a href="/orders/<%=order.id%>">Show</a> 
+            <a href="/orders/<%=order.id%>/edit">Edit</a> 
+            <%= button_to "Delete",order,method: :delete %>
          </td>
         
       </tr>

@@ -1,4 +1,4 @@
-<h3>Create an Item</h3>
+<h3>Add an Order</h3>
 <table border="1">
   <thead>
     <tr>
@@ -23,6 +23,7 @@
       
 <%= form_with model: @order do |form| %>
   <%= form.text_field :customer_id, placeholder: "customer ID" %>
+  <%= form.text_field :status, placeholder: "status" %>
   <%= form.text_field :order_date, placeholder: "date time" %>
   <%= form.text_field :total, placeholder: "total" %>
   <%= form.submit %>
