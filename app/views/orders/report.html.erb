@@ -1,2 +1,21 @@
-<h1>Orders#report</h1>
-<p>Find me in app/views/orders/report.html.erb</p>
+<h1>Today's Report</h1>
+
+<%# report order%>
+<table border="1">
+  <thead>
+    <tr>
+        <td><b>Customer</b></td>
+        <td><b>Order Date</b></td>
+        <td><b>Total</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reports.each do |order| %>
+      <tr>
+        <td><%= order.customer.name %></td>
+        <td><%= order.order_date %></td>
+        <td><%= order.total %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

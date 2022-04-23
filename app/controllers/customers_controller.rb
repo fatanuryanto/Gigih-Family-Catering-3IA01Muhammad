@@ -8,7 +8,7 @@ class CustomersController < ApplicationController
   end
 
   def create
-    customer = Customer.create(params.require(:customer).permit(:name, :phone,:address))
+    customer = Customer.create(params.require(:customer).permit(:name,:email, :phone,:address))
 
     redirect_to customers_path
   end
@@ -19,7 +19,7 @@ class CustomersController < ApplicationController
 
   def update
     customer=Customer.find(params[:id])
-    customer = Customer.update(params.require(:customer).permit(:name, :phone,:address))
+    customer = Customer.update(params.require(:customer).permit(:name,:email, :phone,:address))
 
     redirect_to customers_path
   end

@@ -1,0 +1,11 @@
+<h1>Order Details</h1>
+
+<p>Customer : <%= @order.customer.name %></p>
+<p>Order Date : <%= @order.order_date %></p>
+
+<%# show item %>
+<% @order.orderDetails.each do |o| %>
+    <p>Name :<%= o.item.name%></p>
+    <p>Quantity :<%= o.quantity%></p>
+<% end %>
+
