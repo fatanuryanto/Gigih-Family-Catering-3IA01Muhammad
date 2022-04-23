@@ -1,0 +1,23 @@
+<h1> Report List </h1>
+<table border="1">
+  <thead>
+    <tr>
+        <td><b>Customer</b></td>
+        <td><b>Status</b></td>
+        <td><b>Order Date</b></td>
+        <td><b>Total</b></td>
+        <td><b>Action</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= report.customer_id%></td>
+        <td><%= report.status %></td>
+        <td><%= report.order_date %></td>
+        <td><%= report.total %></td>
+         </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
